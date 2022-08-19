@@ -1,0 +1,12 @@
+name: "TechCore Deployment Action"
+description: "Deploy your application to the TechCore platform"
+inputs:
+  techcore-api-key:
+    description: "API Key from the TechCore Platform"
+    required: true
+  techcore-build:
+    description: "Build ID from TechCore"
+    required: true
+runs:
+  using: "node16"
+  main: "src/index.js"
