@@ -1,4 +1,4 @@
-const core = require('@actions/core');
+import core from '@actions/core';
 
 async function handler() {
   core.info("TechCore deployment action initiated.");
