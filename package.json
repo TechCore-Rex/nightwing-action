@@ -1,12 +1,16 @@
 {
-  "name": "deployment",
+  "name": "TechCore-GH-Action",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "main": "src/index.js",
+  "repository": "https://github.com/TechCore-Rex/nightwing-action.git",
+  "author": "TechCore Engineering",
+  "license": "UNLICENSED",
+  "type": "module",
   "dependencies": {
     "@actions/core": "^1.9.1",
     "@actions/github": "^5.0.3",
     "axios": "^0.27.2",
+    "config": "^3.3.7",
     "dotenv": "^16.0.1"
   }
 }
