@@ -7,6 +7,7 @@ async function handler() {
     const techCoreToken = core.getInput("techcore-access-token");
     console.log(`your buildId: ${buildId}`);
     console.log(`your techCoreToken: ${techCoreToken}`);
+
 }
 
 handler();
