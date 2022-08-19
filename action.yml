@@ -7,6 +7,9 @@ inputs:
   techcore-build:
     description: "Build ID from TechCore"
     required: true
+  environment:
+    description: ""
+    required: false
 runs:
   using: "node16"
   main: "src/index.js"
