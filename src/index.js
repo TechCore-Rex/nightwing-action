@@ -1,6 +1,6 @@
 import core from '@actions/core';
 
-async function handler() {
+async function main() {
   core.info("TechCore deployment action initiated.");
   const buildId = core.getInput("techcore-build-id");
   const techCoreToken = core.getInput("techcore-api-key");
@@ -8,4 +8,4 @@ async function handler() {
   console.log(`your techCoreToken: ${techCoreToken}`);
 }
 
-handler();
+main();

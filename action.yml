@@ -4,7 +4,7 @@ inputs:
   techcore-api-key:
     description: "API Key from the TechCore Platform"
     required: true
-  techcore-build:
+  techcore-build-id:
     description: "Build ID from TechCore"
     required: true
   environment:
