@@ -1,5 +1,5 @@
-name: "TechCore Deployment Action"
-description: "Deploy your application to the TechCore platform"
+name: "TechCore Build Action"
+description: "View the status of your TechCore build"
 inputs:
   techcore-api-key:
     description: "API Key from the TechCore Platform"
