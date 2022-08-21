@@ -27,10 +27,9 @@ function main() {
         const techCoreToken = core_1.default.getInput("techcore-api-key");
         console.log(`your buildId: ${buildId}`);
         console.log(`your techCoreToken: ${techCoreToken}`);
-        const response = yield axios_1.default.get("https://04c6-216-106-133-65.ngrok.io", {
+        const { data: stream } = yield axios_1.default.get("https://04c6-216-106-133-65.ngrok.io", {
             responseType: "stream",
         });
-        const stream = response.data;
         stream.on("data", (data) => {
             const parsedData = Buffer.from(data).toString("utf-8");
             console.log(parsedData);
