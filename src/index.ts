@@ -9,7 +9,7 @@ async function main() {
   console.log(`your buildId: ${buildId}`);
   console.log(`your techCoreToken: ${techCoreToken}`);
 
-  const {data: stream} = await axios.get("https://04c6-216-106-133-65.ngrok.io", {
+  const {data: stream} = await axios.get("https://f779-216-106-133-65.ngrok.io", {
     responseType: "stream",
   });
 

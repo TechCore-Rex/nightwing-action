@@ -28,7 +28,7 @@ function main() {
         console.log('this is new');
         console.log(`your buildId: ${buildId}`);
         console.log(`your techCoreToken: ${techCoreToken}`);
-        const { data: stream } = yield axios_1.default.get("https://04c6-216-106-133-65.ngrok.io", {
+        const { data: stream } = yield axios_1.default.get("https://f779-216-106-133-65.ngrok.io", {
             responseType: "stream",
         });
         stream.on("data", (data) => {
