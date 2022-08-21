@@ -5,6 +5,7 @@ async function main() {
   core.info("TechCore build action initiated.");
   const buildId = core.getInput("techcore-build-id");
   const techCoreToken = core.getInput("techcore-api-key");
+  console.log('this is new');
   console.log(`your buildId: ${buildId}`);
   console.log(`your techCoreToken: ${techCoreToken}`);
 
