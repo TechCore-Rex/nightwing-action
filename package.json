@@ -1,16 +1,27 @@
 {
   "name": "TechCore-GH-Action",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/TechCore-Rex/nightwing-action.git",
   "author": "TechCore Engineering",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "tsc",
+    "package": "yarn build && ncc build --source-map"
+  },
   "dependencies": {
     "@actions/core": "^1.9.1",
     "@actions/github": "^5.0.3",
     "axios": "^0.27.2",
     "config": "^3.3.7",
     "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.8",
+    "@vercel/ncc": "^0.34.0",
+    "husky": "^8.0.1",
+    "typescript": "^4.7.4"
   }
 }
