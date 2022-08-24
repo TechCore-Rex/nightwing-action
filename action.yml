@@ -7,8 +7,8 @@ inputs:
   techcore-build-id:
     description: "Build ID from TechCore"
     required: true
-  environment:
-    description: ""
+  techcore-api-url:
+    description: "Optionally specify the TechCore api endpoint"
     required: false
 runs:
   using: "node16"
