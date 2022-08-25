@@ -25,7 +25,7 @@ async function main() {
   });
 
   stream.on("data", (data) => {
-    const parsedData = Buffer.from(line).toString("utf-8");
+    const parsedData = Buffer.from(data).toString("utf-8");
     const stringLines = jsonString.split(/\r?\n/);
     for (let line of stringLines) {
       console.log(line);
