@@ -19,7 +19,10 @@ async function main() {
     headers: {
       ['X-API-KEY']: techCoreToken,
     },
-  }).catch((e) => {throw new Error("Failed to get build stream!", e)});
+  }).catch((e) => {
+    console.log(e)
+    throw new Error("Failed to get build stream!")
+  });
 
   stream.on("data", (data) => {
     const parsedData = Buffer.from(data).toString("utf-8");
