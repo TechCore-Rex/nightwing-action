@@ -12,7 +12,7 @@ async function main() {
   console.log(`techCoreToken: `, techCoreToken)
   console.log(`logHost: `, logHost)
 
-  const url = `${logHost}/api/builds/${buildId}/logs`;
+  const url = `${logHost}/builds/${buildId}/logs`;
   const {data: stream} = await axios.get(url, {
     responseType: "stream",
     timeout: 30_000,
