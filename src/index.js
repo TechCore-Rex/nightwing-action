@@ -1,5 +1,5 @@
 import core from "@actions/core";
-import axios from "axios";
+import axios from 'axios';
 
 async function main() {
   core.info("TechCore build action initiated.");
@@ -8,36 +8,29 @@ async function main() {
   // const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.com";
   const logHost = "https://c2dc-66-90-165-82.ngrok.io";
 
-  console.log(`buildId: `, buildId);
-  console.log(`techCoreToken: `, techCoreToken);
-  console.log(`logHost: `, logHost);
+  console.log(`buildId: `, buildId)
+  console.log(`techCoreToken: `, techCoreToken)
+  console.log(`logHost: `, logHost)
 
   const url = `${logHost}/builds/${buildId}/logs`;
-  const { data: stream } = await axios
-    .get(url, {
-      responseType: "stream",
-      timeout: 30_000,
-      headers: {
-        Authorization: `Bearer ${techCoreToken}`,
-      },
-    })
-    .catch((e) => {
-      console.log(e);
-      throw new Error("Failed to get build stream!");
-    });
+  const {data: stream} = await axios.get(url, {
+    responseType: "stream",
+    timeout: 30_000,
+    headers: {
+      'Authorization': `Bearer ${techCoreToken}`
+    },
+  }).catch((e) => {
+    console.log(e)
+    throw new Error("Failed to get build stream!")
+  });
 
   stream.on("data", (data) => {
-    const stringLines = Buffer.from(data).toString("utf-8").split(/\r?\n/);
-    const jsonLines = stringLines
-      .map((el) => {
-        if (el === "") return null;
-        return JSON.parse(el);
-      })
-      .filter((el) => el);
 
-    console.log(jsonLines);
-    for (let line of jsonLines) {
-      console.log("chicken2", line);
+    const stringLines = Buffer.from(data).toString('utf-8').split(/\r?\n/);
+
+    for (let line of stringLines) {
+      const chicken = JSON.parse(line);
+      console.log(chicken.line)
     }
   });
 
