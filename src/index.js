@@ -5,12 +5,7 @@ async function main() {
   core.info("TechCore build action initiated.");
   const buildId = core.getInput("techcore-build-id");
   const techCoreToken = core.getInput("techcore-api-key");
-  // const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.com";
-  const logHost = "https://c2dc-66-90-165-82.ngrok.io";
-
-  console.log(`buildId: `, buildId);
-  console.log(`techCoreToken: `, techCoreToken);
-  console.log(`logHost: `, logHost);
+  const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.com";
 
   const url = `${logHost}/builds/${buildId}/logs`;
   const { data: stream } = await axios
