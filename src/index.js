@@ -29,8 +29,12 @@ async function main() {
     const stringLines = Buffer.from(data).toString('utf-8').split(/\r?\n/);
 
     for (let line of stringLines) {
-      const chicken = JSON.parse(line);
-      console.log(chicken.line)
+      try {
+        const chicken = JSON.parse(line);
+        console.log(chicken.line)
+      } catch {
+        console.log(line)
+      }
     }
   });
 
