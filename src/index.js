@@ -26,6 +26,7 @@ async function main() {
 
   stream.on("data", (data) => {
     const parsedData = Buffer.from(data.line).toString("utf-8");
+    console.log(parsedData);
   });
 
   stream.on("end", () => {
