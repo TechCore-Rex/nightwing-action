@@ -25,9 +25,11 @@ async function main() {
   });
 
   stream.on("data", (data) => {
-    const parsedData = Buffer.from(data).toString("utf-8");
-    console.log("a", parsedData?.line);
-    console.log("b", JSON.stringify(parsedData));
+    const stringLines = data.split(/\r?\n/);
+    for (let line of stringLines) {
+      const parsedData = Buffer.from(line).toString("utf-8");
+      console.log(parsedData.line);
+    }
   });
 
   stream.on("end", () => {
