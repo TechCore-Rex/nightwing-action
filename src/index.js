@@ -17,7 +17,7 @@ async function main() {
     responseType: "stream",
     timeout: 30_000,
     headers: {
-      ['X-API-KEY']: techCoreToken,
+      'Authorization': `Bearer ${techCoreToken}`
     },
   }).catch((e) => {
     console.log(e)
