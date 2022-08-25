@@ -28,7 +28,6 @@ async function main() {
     const stringLines = Buffer.from(data).toString('utf-8').split(/\r?\n/);
     for (let line of stringLines) {
       console.log('chicken', line);
-      console.log(parsedData.line);
     }
   });
 
