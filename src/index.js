@@ -25,11 +25,10 @@ async function main() {
   });
 
   stream.on("data", (data) => {
-    const jsonString = Buffer.from(data).toString("utf-8");
-    const stringLines = jsonString.split(/\r?\n/);
+    const stringLines = Buffer.from(data).toString('utf-8').split(/\r?\n/);
     for (let line of stringLines) {
-      console.log(line);
-      console.log(parsedData?.line);
+      console.log('chicken', line);
+      console.log(parsedData.line);
     }
   });
 
