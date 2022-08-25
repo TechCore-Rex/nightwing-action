@@ -8,6 +8,10 @@ async function main() {
   // const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.com";
   const logHost = "https://c2dc-66-90-165-82.ngrok.io";
 
+  console.log(`buildId: `, buildId)
+  console.log(`techCoreToken: `, techCoreToken)
+  console.log(`logHost: `, logHost)
+
   const url = `${logHost}/api/builds/${buildId}/logs`;
   const {data: stream} = await axios.get(url, {
     responseType: "stream",
@@ -15,7 +19,7 @@ async function main() {
     headers: {
       ['X-API-KEY']: techCoreToken,
     },
-  }).catch(() => {throw new Error("Failed to get build stream!")});
+  }).catch((e) => {throw new Error("Failed to get build stream!", e)});
 
   stream.on("data", (data) => {
     const parsedData = Buffer.from(data).toString("utf-8");
