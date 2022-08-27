@@ -5,7 +5,7 @@ async function main() {
   core.info("TechCore build action initiated.");
   const buildId = core.getInput("techcore-build-id");
   const techCoreToken = core.getInput("techcore-api-key");
-  const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.ninja";
+  const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.com";
 
   const url = `${logHost}/builds/${buildId}/logs`;
   console.log(`Connecting to URL: ${url}`)
