@@ -8,6 +8,7 @@ async function main() {
   const logHost = core.getInput("techcore-api-url") ?? "https://api.techcore.ninja";
 
   const url = `${logHost}/builds/${buildId}/logs`;
+  console.log(`Connecting to URL: ${url}`)
   const { data: stream } = await axios
     .get(url, {
       responseType: "stream",
@@ -17,8 +18,8 @@ async function main() {
       },
     })
     .catch((e) => {
-      console.log(e);
-      throw new Error("Failed to get build stream!");
+      console.log('this is the log', e);
+      throw new Error(`Failed to get build stream! ${e}`);
     });
 
   stream.on("data", (data) => {
